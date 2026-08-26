@@ -1,0 +1,391 @@
+{
+  "schema": 1,
+  "groups": {
+    "blizzard-ui": {
+      "folders": [
+        "Blizzard_AuctionUI",
+        "Blizzard_BattlefieldMinimap",
+        "Blizzard_BindingUI",
+        "Blizzard_CombatText",
+        "Blizzard_CraftUI",
+        "Blizzard_GMSurveyUI",
+        "Blizzard_InspectUI",
+        "Blizzard_MacroUI",
+        "Blizzard_RaidUI",
+        "Blizzard_TalentUI",
+        "Blizzard_TradeSkillUI",
+        "Blizzard_TrainerUI"
+      ],
+      "name": "Blizzard interface",
+      "category": "Client",
+      "required": true,
+      "description": "Stock 1.12 UI panels — auction house, talents, macros, raid frames. Part of the client, not an optional addon.",
+      "source": {
+        "kind": "client"
+      }
+    },
+    "turtle-ui": {
+      "folders": [
+        "Turtle_General",
+        "Turtle_GroupUI"
+      ],
+      "name": "Turtle interface",
+      "category": "Client",
+      "required": true,
+      "description": "Turtle's own UI additions. Ships with the client.",
+      "source": {
+        "kind": "client"
+      }
+    },
+    "classicapi": {
+      "folders": [
+        "!!!ClassicAPI"
+      ],
+      "name": "ClassicAPI",
+      "category": "Client",
+      "required": true,
+      "description": "Lua side of ClassicAPI.dll. Loads first (hence the !!! prefix) because other addons call into it.",
+      "source": {
+        "kind": "bundled"
+      }
+    },
+    "superapi": {
+      "folders": [
+        "SuperAPI"
+      ],
+      "name": "SuperAPI",
+      "category": "Client",
+      "required": true,
+      "description": "Lua side of SuperWoWhook.dll. Must match the injected DLL.",
+      "source": {
+        "kind": "bundled"
+      }
+    },
+    "unitxp-sp3": {
+      "folders": [
+        "UnitXP_SP3_Addon"
+      ],
+      "name": "UnitXP SP3",
+      "category": "Client",
+      "required": true,
+      "description": "Lua side of UnitXP_SP3.dll. Must match the injected DLL.",
+      "source": {
+        "kind": "bundled"
+      }
+    },
+    "nampower-settings": {
+      "folders": [
+        "nampowersettings"
+      ],
+      "name": "Nampower settings",
+      "category": "Client",
+      "required": true,
+      "description": "Configuration UI for nampower.dll. Must match the injected DLL.",
+      "source": {
+        "kind": "bundled"
+      }
+    },
+    "wowtranslate": {
+      "folders": [
+        "WoWTranslate"
+      ],
+      "name": "WoWTranslate",
+      "category": "Client",
+      "required": true,
+      "description": "Lua side of WoWTranslate.dll.",
+      "source": {
+        "kind": "bundled"
+      }
+    },
+    "cnfix-names": {
+      "folders": [
+        "CNFixNames"
+      ],
+      "name": "CNFix names",
+      "category": "Client",
+      "required": true,
+      "description": "Lua side of CNFixEnglish.dll.",
+      "source": {
+        "kind": "bundled"
+      }
+    },
+    "pfquest": {
+      "folders": [
+        "pfQuest",
+        "pfQuest-turtle"
+      ],
+      "name": "pfQuest",
+      "category": "Quests",
+      "recommended": true,
+      "description": "Quest and item database with map overlays. Bundled with the Turtle data pack, which is useless on its own.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/The-Kludge-Bureau/pfQuest",
+            "branch": "main",
+            "folder": "pfQuest"
+          },
+          {
+            "url": "https://github.com/The-Kludge-Bureau/pfQuest-turtle",
+            "branch": "main",
+            "folder": "pfQuest-turtle"
+          }
+        ]
+      }
+    },
+    "shagutweaks": {
+      "folders": [
+        "ShaguTweaks"
+      ],
+      "name": "ShaguTweaks",
+      "category": "Interface",
+      "recommended": true,
+      "description": "Modular quality-of-life UI improvements. Each tweak toggles individually in-game.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/paokkerkir/ShaguTweaks",
+            "branch": "master",
+            "folder": "ShaguTweaks"
+          }
+        ]
+      }
+    },
+    "shagutweaks-extras": {
+      "folders": [
+        "ShaguTweaks-extras"
+      ],
+      "name": "ShaguTweaks extras",
+      "category": "Interface",
+      "deps": [
+        "shagutweaks"
+      ],
+      "description": "Additional ShaguTweaks modules. Needs ShaguTweaks.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/paokkerkir/ShaguTweaks-extras",
+            "branch": "master",
+            "folder": "ShaguTweaks-extras"
+          }
+        ]
+      }
+    },
+    "bettercharacterstats": {
+      "folders": [
+        "BetterCharacterStats"
+      ],
+      "name": "BetterCharacterStats",
+      "category": "Interface",
+      "recommended": true,
+      "description": "Shows the stats vanilla hides — spell power by school, hit, crit, mp5.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/pepopo978/BetterCharacterStats",
+            "branch": "main",
+            "folder": "BetterCharacterStats"
+          }
+        ]
+      }
+    },
+    "bettercharacterpanel": {
+      "folders": [
+        "BetterCharacterPanel"
+      ],
+      "name": "BetterCharacterPanel",
+      "category": "Interface",
+      "description": "Reworked character sheet layout.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/Arthur-Helias/BetterCharacterPanel",
+            "branch": "main",
+            "folder": "BetterCharacterPanel"
+          }
+        ]
+      }
+    },
+    "guda-bags": {
+      "folders": [
+        "Guda"
+      ],
+      "name": "Guda Bags",
+      "category": "Inventory",
+      "recommended": true,
+      "description": "One-bag inventory view with search and sorting.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/vatichild/guda",
+            "branch": "main",
+            "folder": "Guda"
+          }
+        ]
+      }
+    },
+    "guda-plates": {
+      "folders": [
+        "GudaPlates"
+      ],
+      "name": "Guda Plates",
+      "category": "Combat",
+      "description": "Nameplate replacement with cast bars and threat colouring.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/vatichild/GudaPlates",
+            "branch": "main",
+            "folder": "GudaPlates"
+          }
+        ]
+      }
+    },
+    "msbt": {
+      "folders": [
+        "MikScrollingBattleText",
+        "MikScrollingBattleTextOptions"
+      ],
+      "name": "MikScrollingBattleText",
+      "category": "Combat",
+      "description": "Scrolling combat text. The options panel is a separate folder and must ship with it.",
+      "source": {
+        "kind": "bundled"
+      }
+    },
+    "supercleveroidmacros": {
+      "folders": [
+        "SuperCleveRoidMacros"
+      ],
+      "name": "SuperCleveRoidMacros",
+      "category": "Combat",
+      "description": "Conditional macro syntax — cast by target, stance, buff state.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/jrc13245/SuperCleveRoidMacros",
+            "branch": "main",
+            "folder": "SuperCleveRoidMacros"
+          }
+        ]
+      }
+    },
+    "soloraidtargeticons": {
+      "folders": [
+        "SoloRaidTargetIcons"
+      ],
+      "name": "SoloRaidTargetIcons",
+      "category": "Combat",
+      "description": "Set raid target markers without being in a raid.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/jrc13245/SoloRaidTargetIcons",
+            "branch": "master",
+            "folder": "SoloRaidTargetIcons"
+          }
+        ]
+      }
+    },
+    "questhaste": {
+      "folders": [
+        "QuestHaste"
+      ],
+      "name": "QuestHaste",
+      "category": "Quests",
+      "description": "Skips quest dialogue steps.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/HeartNotSmart/QuestHaste",
+            "branch": "master",
+            "folder": "QuestHaste"
+          }
+        ]
+      }
+    },
+    "zoneslevel": {
+      "folders": [
+        "ZonesLevel"
+      ],
+      "name": "ZonesLevel",
+      "category": "Interface",
+      "description": "Shows level ranges on the world map and minimap.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/Arthur-Helias/ZonesLevel",
+            "branch": "master",
+            "folder": "ZonesLevel"
+          }
+        ]
+      }
+    },
+    "magnify": {
+      "folders": [
+        "Magnify"
+      ],
+      "name": "Magnify",
+      "category": "Interface",
+      "description": "Scales the UI beyond the vanilla slider limit.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/paokkerkir/Magnify",
+            "branch": "main",
+            "folder": "Magnify"
+          }
+        ]
+      }
+    },
+    "minimapbuttonbag": {
+      "folders": [
+        "MinimapButtonBag"
+      ],
+      "name": "MinimapButtonBag",
+      "category": "Interface",
+      "description": "Collects minimap buttons into one collapsible bag.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/McPewPew/MinimapButtonBag",
+            "branch": "master",
+            "folder": "MinimapButtonBag"
+          }
+        ]
+      }
+    },
+    "classicsnowfall": {
+      "folders": [
+        "ClassicSnowfall"
+      ],
+      "name": "ClassicSnowFall",
+      "category": "Cosmetic",
+      "description": "Adds falling snow to snowy zones.",
+      "source": {
+        "kind": "git",
+        "repos": [
+          {
+            "url": "https://github.com/Road-block/ClassicSnowFall",
+            "branch": "master",
+            "folder": "ClassicSnowfall",
+            "commit": "fd802c10662198d03a1dbe1ccc72aa314da515c6"
+          }
+        ]
+      }
+    }
+  }
+}

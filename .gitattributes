@@ -1,0 +1,9 @@
+# Disable ALL of git's text/newline conversion for this repo.
+#
+# The launcher verifies files by SHA-256. If git rewrote LF to CRLF on
+# checkout, the same commit would produce different bytes on different
+# machines and every file would look modified to some players and not
+# others. Treat everything as binary and hand the bytes through unchanged.
+#
+# Do not "fix" this by adding text rules.
+* -text
