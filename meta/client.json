@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "version": "",
+  "client_version": "1.12.1",
+  "build": 5875,
+  "realm": {
+    "realmlist": "24.199.82.226",
+    "name": "Bear Dog"
+  },
+  "managed_paths": [
+    "*.exe",
+    "*.dll",
+    "Data/patch-Q.MPQ"
+  ],
+  "protected_paths": [
+    "WTF/**",
+    "Interface/AddOns/**",
+    "Screenshots/**",
+    "Logs/**",
+    "Errors/**",
+    "WDB/**",
+    "WDB",
+    "Cache/**",
+    ".beardog/**",
+    "realmlist.wtf",
+    "dlls.txt",
+    "dlls.txt.cache",
+    "dxvk.conf",
+    "*.log",
+    "CNFix_learned.txt"
+  ],
+  "delete": [],
+  "optional_paths": [
+    "Data/patch-Q.MPQ"
+  ]
+}
