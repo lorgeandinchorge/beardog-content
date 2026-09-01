@@ -2,7 +2,9 @@
   "schema": 1,
   "generated": "2026-09-01T00:00:00Z",
   "source_page": "https://projectreforged.github.io/vanilla/downloads/turtle/",
-  "allowed_hosts": ["pub-0f05631d243e4046993fc02ca7be9542.r2.dev"],
+  "allowed_hosts": [
+    "pub-0f05631d243e4046993fc02ca7be9542.r2.dev"
+  ],
   "patches": [
     {
       "id": "reforged-A",
@@ -143,11 +145,26 @@
   ],
   "never_touch": [
     "Data/patch-Q.MPQ",
-    "Data/backup.MPQ", "Data/base.MPQ", "Data/dbc.MPQ", "Data/fonts.MPQ",
-    "Data/interface.MPQ", "Data/misc.MPQ", "Data/model.MPQ", "Data/patch.MPQ",
-    "Data/patch-2.MPQ", "Data/patch-3.mpq", "Data/patch-4.mpq", "Data/patch-5.mpq",
-    "Data/patch-6.mpq", "Data/patch-7.mpq", "Data/patch-8.mpq", "Data/patch-9.mpq",
-    "Data/sound.MPQ", "Data/speech.MPQ", "Data/terrain.MPQ", "Data/texture.MPQ",
+    "Data/backup.MPQ",
+    "Data/base.MPQ",
+    "Data/dbc.MPQ",
+    "Data/fonts.MPQ",
+    "Data/interface.MPQ",
+    "Data/misc.MPQ",
+    "Data/model.MPQ",
+    "Data/patch.MPQ",
+    "Data/patch-2.MPQ",
+    "Data/patch-3.mpq",
+    "Data/patch-4.mpq",
+    "Data/patch-5.mpq",
+    "Data/patch-6.mpq",
+    "Data/patch-7.mpq",
+    "Data/patch-8.mpq",
+    "Data/patch-9.mpq",
+    "Data/sound.MPQ",
+    "Data/speech.MPQ",
+    "Data/terrain.MPQ",
+    "Data/texture.MPQ",
     "Data/wmo.MPQ"
   ]
 }

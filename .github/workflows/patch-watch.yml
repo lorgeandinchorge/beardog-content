@@ -1,0 +1,64 @@
+name: patch-watch
+
+# Watches Project Reforged's downloads and opens a PR when a patch actually
+# changes. Merging that PR is the release: teammates pick it up on their next
+# catalogue sync. Nothing here ever pushes to main.
+#
+# Design: claude/patch-updates-plan.md in the Bear Dog Launcher project docs.
+
+on:
+  schedule:
+    # 06:00 UTC daily (02:00 ET). These patches move maybe monthly; a normal run
+    # is 11 HEAD requests and no downloads.
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: patch-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    # Worst case is every patch moving at once: ~11.5 GB of downloading and
+    # hashing, one file at a time.
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Free disk before we start
+        run: df -h /
+
+      - name: Check upstream patches
+        id: watch
+        run: |
+          python3 scripts/patch_watch.py \
+            --manifest meta/patch-manifest.json \
+            --pr-body "${RUNNER_TEMP}/pr-body.md"
+
+      - name: Open pull request
+        if: steps.watch.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Passed through the environment rather than interpolated into the
+          # script body, so a title can never be read as shell.
+          TITLE: ${{ steps.watch.outputs.title }}
+        run: |
+          set -euo pipefail
+          branch="patch-watch/$(date -u +%Y%m%d-%H%M%S)"
+          git config user.name "patch-watch"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add meta/patch-manifest.json
+          git commit -m "$TITLE"
+          git push origin "$branch"
+          gh pr create \
+            --base main \
+            --head "$branch" \
+            --title "$TITLE" \
+            --body-file "${RUNNER_TEMP}/pr-body.md"
